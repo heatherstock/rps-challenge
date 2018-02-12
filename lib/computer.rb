@@ -1,13 +1,8 @@
 class Computer
 
-RULES = {
-          rock: :scissors,
-          scissors: :paper,
-          paper: :rock,
-        }
 
   def weapon
-    [:rock, :paper, :scissors].sample
+    [:rock, :paper, :scissors].sample.to_s
   end
 
 end

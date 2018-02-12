@@ -1,13 +1,7 @@
 <h1>Welcome <%= @game.player.name %>!</h1>
 
-<form action="/rock" method="get">
-  <input type="submit" value="Rock">
-</form>
-
-<form action="/paper" method="get">
-  <input type="submit" value="Paper">
-</form>
-
-<form action="/scissors" method="get">
-  <input type="submit" value="Scissors">
+<form action="/choice" method="post">
+  <input type="submit" value="Rock" name="weapon">
+  <input type="submit" value="Paper" name="weapon">
+  <input type="submit" value="Scissors" name="weapon">
 </form>

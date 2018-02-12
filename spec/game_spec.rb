@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
   subject(:game) { described_class.new(player, computer) }
-  let(:player) { double("player") }
-  let(:computer) { double("computer") }
+  let(:player) { double("player", weapon: "Rock") }
+  let(:computer) { double("computer", weapon: "Scissors") }
 
   describe "#initialize" do
     it "takes a player as an argument" do
@@ -15,4 +15,9 @@ describe Game do
     end
   end
 
+  describe '#result' do
+    it "returns winner statement" do
+      expect(game.result).to eq :win
+    end
+  end
 end

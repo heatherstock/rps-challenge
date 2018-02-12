@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/computer.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -21,16 +22,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  get '/rock' do
-    erb(:rock)
+  post '/choice' do
+    @game.player.weapon = params[:weapon]
+    erb(:result)
   end
 
-  get '/paper' do
-    erb(:paper)
-  end
-
-  get '/scissors' do
-    erb(:scissors)
-  end
 
 end
